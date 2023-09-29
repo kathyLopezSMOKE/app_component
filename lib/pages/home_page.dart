@@ -1,3 +1,5 @@
+import 'package:app_component/pages/alert_page.dart';
+import 'package:app_component/pages/avatar_page.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -43,13 +45,9 @@ class HomePage extends StatelessWidget {
                 width: 160.0,
                 child: Divider(),
               ),
-              ItemComponentWidget(),
-              ItemComponentWidget(),
-              ItemComponentWidget(),
-              ItemComponentWidget(),
-              ItemComponentWidget(),
-              ItemComponentWidget(),
-              ItemComponentWidget(),
+              ItemComponentWidget(titulo: "Avatar",irPagina: AvatarPage(),),
+              ItemComponentWidget(titulo: "Alert",irPagina: AlertPage(),),
+
             ],
           ),
         ),
@@ -59,9 +57,9 @@ class HomePage extends StatelessWidget {
 }
 
 class ItemComponentWidget extends StatelessWidget {
-  const ItemComponentWidget({
-    super.key,
-  });
+String titulo;
+Widget irPagina;
+ItemComponentWidget({required this.titulo,required this.irPagina});
 
   @override
   Widget build(BuildContext context) {
@@ -82,8 +80,11 @@ class ItemComponentWidget extends StatelessWidget {
         ],
       ),
       child: ListTile(
-        title: Text("Avatar",style: GoogleFonts.poppins(),),
-        subtitle: Text("Ir a detalles de Alert"),
+        onTap: (){
+          Navigator.push(context, MaterialPageRoute(builder:(context)=>irPagina,));
+        },
+        title: Text(titulo,style: GoogleFonts.poppins(),),
+        subtitle: Text("Ir a detalles del: $titulo"),
         leading: Icon(Icons.check_circle_outline),
         trailing: Icon(Icons.chevron_right),
       ),
