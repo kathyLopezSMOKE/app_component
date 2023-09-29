@@ -20,7 +20,7 @@ class HomePage extends StatelessWidget {
                   color: Colors.amber,
                   image: DecorationImage(
                     image: NetworkImage(
-                      "https://malditopaparazzo.com.ar/wp-content/uploads/2021/05/David-Chicle-768x770.jpg"),
+                       "https://malditopaparazzo.com.ar/wp-content/uploads/2021/05/David-Chicle-768x770.jpg"),
                   ),
                   borderRadius: BorderRadius.circular(20.0),
                   boxShadow: [
