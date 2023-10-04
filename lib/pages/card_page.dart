@@ -121,6 +121,43 @@ class CardPage extends StatelessWidget {
               ],
             ),
           ),
+          //card3
+          Container(
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(18.0),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withOpacity(0.5),
+                  offset: Offset(4, 4),
+                  blurRadius: 12.0,
+                ),
+                BoxShadow(
+                  color: Colors.white,
+                  offset: Offset(-5, -5),
+                  blurRadius: 12.0,
+                ),
+              ],
+            ),
+            padding: EdgeInsets.all(12.0),
+            margin: EdgeInsets.all(10.0),
+            child: Row(
+              children: [
+                Expanded(
+                  child: Text("Sed commodo sagittis dui, non gravida nisl convallis a. Nam enim purus, commodo ac nibh quis, dictum cursus mi. Cras sit amet viverra dolor. Donec laoreet consectetur orci, at gravida dui dictum vitae. Quisque in ornare dolor. Curabitur vitae massa ac arcu suscipit luctus a quis nibh. Ut in molestie mauris. Pellentesque tincidunt lectus vel tristique rutrum. Etiam at magna nec leo tempor blandit.",
+                  maxLines: 6,
+                  overflow: TextOverflow.ellipsis,
+                  ),
+                ),
+                SizedBox(width: 5,),
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(15.0),
+                  child: Image.asset("assets/images/David-Chicle.jpg",height:110.00),
+                  
+                ),
+              ],
+            ),
+          ),
         ],
       ),
     );
