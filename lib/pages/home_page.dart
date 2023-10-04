@@ -1,5 +1,6 @@
 import 'package:app_component/pages/alert_page.dart';
 import 'package:app_component/pages/avatar_page.dart';
+import 'package:app_component/pages/card_page.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -21,8 +22,7 @@ class HomePage extends StatelessWidget {
                 decoration:  BoxDecoration(
                   color: Colors.amber,
                   image: DecorationImage(
-                    image: NetworkImage(
-                       "https://malditopaparazzo.com.ar/wp-content/uploads/2021/05/David-Chicle-768x770.jpg"),
+                    image: AssetImage("assets/images/David-Chicle.jpg"),
                   ),
                   borderRadius: BorderRadius.circular(20.0),
                   boxShadow: [
@@ -47,6 +47,7 @@ class HomePage extends StatelessWidget {
               ),
               ItemComponentWidget(titulo: "Avatar",irPagina: AvatarPage(),),
               ItemComponentWidget(titulo: "Alert",irPagina: AlertPage(),),
+              ItemComponentWidget(titulo: "Card",irPagina: CardPage(),),
 
             ],
           ),
