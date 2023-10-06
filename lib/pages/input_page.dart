@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class InputPage extends StatelessWidget {
-  const InputPage({super.key});
+class InputPage extends StatefulWidget {
+  @override
+  State<InputPage> createState() => _InputPageState();
+}
+
+class _InputPageState extends State<InputPage> {
+  bool isvisible=true;
 
   @override
   Widget build(BuildContext context) {
@@ -98,6 +103,22 @@ class InputPage extends StatelessWidget {
                       width: 0,
                     ),
                   ),
+                ),
+              ),
+            ),
+            SizedBox(height: 20,),
+            TextField(
+              obscureText: isvisible,
+              decoration: InputDecoration(
+                hintText: "Contraseña",
+                suffixIcon: IconButton(
+                  onPressed: (){
+                    isvisible=! isvisible;
+                    setState(() {});
+                  }, 
+                  icon: isvisible 
+                  ? Icon(Icons.remove_red_eye)
+                  : Icon(Icons.remove_red_eye_outlined),
                 ),
               ),
             ),
